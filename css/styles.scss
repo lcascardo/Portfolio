@@ -1,0 +1,277 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+//FONT FAMILY
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+//FONT SIZE BASE
+$font-size-base: 14px;
+
+//FONT WEIGHT CUSTOM
+$font-weight-lighter: lighter;
+$font-weight-light: 400;
+$font-weight-normal: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+
+
+//COLORES PRIMARY Y SECONDARY
+$primary: #373B40;
+$secondary: #585D65;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+);
+
+// COLORES CUSTOM
+$custom-colors: (
+  //CELESTE
+  "celeste-color": #68E0CF,
+  //BLANCO
+  "blanco-color": #FFFFFF,
+);
+
+// AGREGAR COLORES CUSTOM
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+//FONT SIZES 
+.font1 {
+  font-size: clamp(40px, 10vw, 60px);
+}
+
+.font2 {
+  font-size: 40px;
+}
+
+.font3 {
+  font-size: 34px;
+}
+
+.font4 {
+  font-size: clamp(24px,2vw,34px)
+}
+
+.font5 {
+  font-size: clamp(18px,2vw,25px);
+}
+
+.font6 {
+  font-size: clamp(14px,2vw,18px);
+}
+
+.font7 {
+  font-size: clamp(12px,3vw,16px);
+}
+
+.font8 {
+  font-size: clamp(11px,2vw,12px)
+}
+
+//NAVBAR
+.navbar {
+  transition: all 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: #373B40;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-clicked {
+  background-color: #373B40;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+//NAVBAR TOGGLER
+.navbar-toggler {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: .5s ease-in-out;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+
+.navbar-toggler span {
+  margin: 0;
+  padding: 0;
+}
+
+.toggler-icon {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 1px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.middle-bar {
+  margin-top: 0px;
+}
+
+.navbar-toggler .top-bar {
+  margin-top: 0px;
+  transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  margin-top: 0px;
+  transform: rotate(-135deg);
+}
+
+.navbar-toggler.collapsed .top-bar {
+  margin-top: -20px;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  margin-top: 20px;
+  transform: rotate(0deg);
+}
+
+//NAVBAR ITEMS
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+}
+
+.nav-item {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+//NAVBAR DESKTOP
+.navbar-desktop {
+  flex-direction: row;
+  height: auto;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nav-item-desktop {
+  margin-top: 0px;
+}
+
+//BOTONES
+.btn-outline-secondary {
+  border-color: #585D65;
+  color: #FFFFFF;
+}
+
+.btn-outline-secondary:focus {
+  color: #585D65;
+  background-color: #FFFFFF;
+}
+
+//FORMULARIO
+.form-control {
+  color: #FFFFFF;
+  background: none;
+  border-color: #585D65;
+  border-radius: 30px;
+  padding: 20px;
+
+  &::placeholder {
+    color: #FFFFFF;
+  }
+
+  &:focus-visible {
+    background: none;
+    color: #FFFFFF;
+  }
+}
+
+//FONDO DE PERFIL
+.background-img-mobile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.background-bg-mobile {
+  position: relative;
+  height: 100vh;
+}
+
+.background-img {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+.background-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 100%;
+}
+
+//INTRODUCCION
+.footer-icons {
+  width: clamp(16px,3vw,50px);
+}
+
+//SCROLLS DE ENLAZADO
+.aboutMe {
+  scroll-margin-top: 100px;
+}
+.portfolio {
+  scroll-margin-top: 100px;
+}
+.contact {
+  scroll-margin-top: 100px;
+}
+
+//PORTFOLIO
+.proyecto-img {
+  max-width: 328px;
+}
